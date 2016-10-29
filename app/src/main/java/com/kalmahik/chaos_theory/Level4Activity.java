@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Level1Activity extends AppCompatActivity {
+public class Level4Activity extends AppCompatActivity {
     private Button button;
+    private int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,23 +21,27 @@ public class Level1Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                counter++;
                 click();
-                win();
-                next();
+                if (counter > 19) {
+                    win();
+                    next();
+                }
             }
         });
+    }
+
+
+    public void win() {
+        Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
     }
 
     public void click() {
         Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
     }
 
-    public void win() {
-        Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
-    }
-
     public void next() {
-        Intent intent = new Intent(Level1Activity.this, Level2Activity.class);
+        Intent intent = new Intent(Level4Activity.this, Level4Activity.class);
         startActivity(intent);
     }
 }

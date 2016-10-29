@@ -17,8 +17,10 @@
         </activity>
 
 
-        <activity android:name=".Level2Activity">
-        </activity>
+        <activity android:name=".Level2Activity"></activity>
+
+        <activity android:name=".Level3Activity"></activity>
+
     </application>
 
 </manifest>
