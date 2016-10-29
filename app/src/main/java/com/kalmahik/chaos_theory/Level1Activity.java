@@ -1,14 +1,19 @@
 package com.kalmahik.chaos_theory;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class Level1Activity extends AppCompatActivity {
     private Button button;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +25,21 @@ public class Level1Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.RED));
                 win();
                 next();
             }
         });
+
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setHomeButtonEnabled(true);
+//        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
+        getSupportActionBar().setTitle("Level 1");
+
     }
 
     public void click() {

@@ -22,6 +22,9 @@ public class Level5Activity extends AppCompatActivity{
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
 
+        getSupportActionBar().setTitle("Level 5");
+
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

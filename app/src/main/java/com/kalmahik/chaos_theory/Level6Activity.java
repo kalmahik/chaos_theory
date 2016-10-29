@@ -1,9 +1,5 @@
 package com.kalmahik.chaos_theory;
 
-/**
- * Created by днс on 29.10.2016.
- */
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +17,9 @@ public class Level6Activity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_1);
+
+        getSupportActionBar().setTitle("Level 6");
+
 
         button1 = (Button) findViewById(R.id.button);
 

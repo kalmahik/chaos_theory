@@ -16,6 +16,8 @@ public class Level3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_3);
 
+        getSupportActionBar().setTitle("Level 3");
+
         button = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
