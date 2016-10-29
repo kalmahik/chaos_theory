@@ -29,7 +29,7 @@ public class Level2Activity extends AppCompatActivity {
         mainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                error_click();
+                //error_click();
             }
         });
 
@@ -37,10 +37,10 @@ public class Level2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter++;
-                click();
                 if (counter > 1) {
                     win();
                     next();
+                    click();
                 }
             }
         });

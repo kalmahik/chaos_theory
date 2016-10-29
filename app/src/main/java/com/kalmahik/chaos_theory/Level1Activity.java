@@ -30,13 +30,6 @@ public class Level1Activity extends AppCompatActivity {
             }
         });
 
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        toolbar.setNavigationOnClickListener(v -> onBackPressed());
-
         getSupportActionBar().setTitle("Level 1");
 
     }

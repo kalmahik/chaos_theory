@@ -21,7 +21,7 @@ public class Level4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_2);
 
-        getSupportActionBar().setTitle("Level 2");
+        getSupportActionBar().setTitle("Level 4");
 
         button = (Button) findViewById(R.id.button);
 
@@ -29,7 +29,7 @@ public class Level4Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                error_click();
+               // error_click();
             }
         });
 
@@ -37,10 +37,11 @@ public class Level4Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter++;
-                click();
-                if (counter > 10) {
+                if (counter > 5) {
                     win();
                     next();
+                    click();
+
                 }
             }
         });
