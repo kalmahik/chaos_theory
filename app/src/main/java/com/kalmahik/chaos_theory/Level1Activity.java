@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Level1Activity extends AppCompatActivity {
     private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level_1);
+        setContentView(R.layout.activity_level_1);
 
         button = (Button) findViewById(R.id.button);
 
