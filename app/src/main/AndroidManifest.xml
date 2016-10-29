@@ -25,6 +25,7 @@
 
         <activity android:name=".Level5Activity"></activity>
 
+        <activity android:name=".Level7Activity"></activity>
 
 
 

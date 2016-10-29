@@ -17,7 +17,6 @@ public class Level1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_1);
 
         button = (Button) findViewById(R.id.button);
