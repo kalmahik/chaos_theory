@@ -1,5 +1,6 @@
 package com.kalmahik.chaos_theory;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,8 @@ public class Level1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 win();
+                Intent intent = new Intent(Level1Activity.this, Level2Activity.class);
+                startActivity(intent);
             }
         });
     }
@@ -27,5 +30,6 @@ public class Level1Activity extends AppCompatActivity {
 
     public void win(){
         Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
+
     }
 }

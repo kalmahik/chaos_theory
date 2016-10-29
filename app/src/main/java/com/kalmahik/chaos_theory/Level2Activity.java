@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 public class Level2Activity extends AppCompatActivity {
     private Button button;
+    private int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +20,16 @@ public class Level2Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                win();
+                counter++;
+                if (counter > 1) {
+                    win();
+                }
             }
         });
     }
 
 
-    public void win(){
+    public void win() {
         Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
     }
 }
