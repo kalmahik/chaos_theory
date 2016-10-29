@@ -14,7 +14,7 @@ public class Level2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_1);
+        setContentView(R.layout.activity_level_2);
 
         button = (Button) findViewById(R.id.button);
 
@@ -32,7 +32,7 @@ public class Level2Activity extends AppCompatActivity {
     }
 
     public void click() {
-        Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
     }
 
     public void win() {

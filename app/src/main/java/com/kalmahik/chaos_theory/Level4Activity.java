@@ -14,7 +14,7 @@ public class Level4Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_1);
+        setContentView(R.layout.activity_level_4);
 
         button = (Button) findViewById(R.id.button);
 
@@ -22,8 +22,7 @@ public class Level4Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter++;
-                click();
-                if (counter > 19) {
+                if (counter > 1) {
                     win();
                     next();
                 }
@@ -41,7 +40,7 @@ public class Level4Activity extends AppCompatActivity {
     }
 
     public void next() {
-        Intent intent = new Intent(Level4Activity.this, Level4Activity.class);
+        Intent intent = new Intent(Level4Activity.this, Level5Activity.class);
         startActivity(intent);
     }
 }
