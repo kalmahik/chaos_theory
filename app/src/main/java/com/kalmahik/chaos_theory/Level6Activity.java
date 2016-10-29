@@ -10,7 +10,8 @@ import android.widget.Toast;
 
 public class Level6Activity extends AppCompatActivity{
     private Button button1;
-    //private Button button2;
+    private Button button2;
+
     private int counter = 0;
 
     @Override
