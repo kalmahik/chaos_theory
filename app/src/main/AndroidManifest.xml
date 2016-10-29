@@ -21,6 +21,14 @@
 
         <activity android:name=".Level3Activity"></activity>
 
+        <activity android:name=".Level4Activity"></activity>
+
+        <activity android:name=".Level5Activity"></activity>
+
+
+
+
+
     </application>
 
 </manifest>

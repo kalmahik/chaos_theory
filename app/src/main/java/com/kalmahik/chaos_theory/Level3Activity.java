@@ -14,7 +14,7 @@ public class Level3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_1);
+        setContentView(R.layout.activity_level_3);
 
         button = (Button) findViewById(R.id.button);
 
@@ -22,7 +22,6 @@ public class Level3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter++;
-                click();
                 if (counter > 19) {
                     win();
                     next();

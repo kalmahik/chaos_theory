@@ -20,7 +20,6 @@ public class Level1Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                click();
                 win();
                 next();
             }
