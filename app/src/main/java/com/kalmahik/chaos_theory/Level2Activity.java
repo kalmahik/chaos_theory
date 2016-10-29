@@ -19,7 +19,7 @@ public class Level2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_2);
+        setContentView(R.layout.activity_level_1);
 
         getSupportActionBar().setTitle("Level 2");
 
