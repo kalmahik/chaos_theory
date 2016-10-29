@@ -13,14 +13,15 @@ import android.widget.Toast;
 public class Level5Activity extends AppCompatActivity{
     private Button button1;
     private Button button2;
-    private int counter = 0;
+    private int counter1 = 0;
+    private int counter2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_1);
+        setContentView(R.layout.activity_level_5);
 
-        button1 = (Button) findViewById(R.id.button);
+        button1 = (Button) findViewById(R.id.button1);
 
         getSupportActionBar().setTitle("Level 5");
 
@@ -28,9 +29,9 @@ public class Level5Activity extends AppCompatActivity{
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter++;
+                counter1++;
                 click();
-                if(counter > 1)
+                if(counter2 > 1)
                 {
                     win();
                 }
@@ -41,14 +42,14 @@ public class Level5Activity extends AppCompatActivity{
             }
         });
 
-        button2 = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter++;
+                counter2++;
                 click();
-                if(counter > 1)
+                if(counter1 > 1)
                 {
                     win();
                 }
