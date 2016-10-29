@@ -17,6 +17,7 @@ public class Level1Activity extends AppCompatActivity {
     private Button button;
     private int counter = 0;
     private RelativeLayout mainActivity;
+    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,13 @@ public class Level1Activity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.button);
 
+        nextButton = (Button) findViewById(R.id.button_next);
+
+        nextButton.setVisibility(View.GONE);
+
+
         mainActivity = (RelativeLayout) findViewById(R.id.activity_main);
+
         mainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,35 +43,44 @@ public class Level1Activity extends AppCompatActivity {
             }
         });
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 counter++;
-                clickButton();
+                button.setBackgroundColor(0xffff0000);
+
 
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
 
                 if (counter > 0) {
-                    win();
-                    next();
                     click();
+                    win();
+                    nextButton.setVisibility(View.VISIBLE);
+
                 }
             }
         });
-    }
 
-    public void clickButton(){
-        button.setBackgroundColor(0xff0000);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
+
+                next();
+            }
+        });
+
     }
 
     public void click() {
-        //Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.RED));
     }
 
     public void errorClick() {
-        //Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
 
     }
@@ -74,6 +90,7 @@ public class Level1Activity extends AppCompatActivity {
     }
 
     public void next() {
+
         Intent intent = new Intent(Level1Activity.this, Level2Activity.class);
         startActivity(intent);
     }

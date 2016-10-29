@@ -2,17 +2,13 @@ package com.kalmahik.chaos_theory;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 public class Level10Activity extends AppCompatActivity {
     private Button button1;
@@ -23,7 +19,9 @@ public class Level10Activity extends AppCompatActivity {
     private int counter2 = 0;
     private int counter3 = 0;
     private int counter4 = 0;
+    private int vibroCounter = 0;
     private RelativeLayout mainActivity;
+    private Button nextButton;
 
 
     @Override
@@ -36,13 +34,23 @@ public class Level10Activity extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
+        nextButton = (Button) findViewById(R.id.button_next);
+
+        nextButton.setVisibility(View.GONE);
 
         mainActivity = (RelativeLayout) findViewById(R.id.activity_main);
         mainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibroCounter++;
+                if (vibroCounter > 9) {
+                    Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(10000);
+                    vibroCounter = 0;
+                }
+
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(10000);
+                vibrator.vibrate(100);
             }
         });
 
@@ -50,6 +58,8 @@ public class Level10Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter1++;
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
             }
         });
 
@@ -58,6 +68,8 @@ public class Level10Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter2++;
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
             }
         });
 
@@ -65,6 +77,8 @@ public class Level10Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter3++;
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
             }
         });
 
@@ -72,11 +86,25 @@ public class Level10Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter4++;
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
                 if (counter1 > 0 && counter2 > 0 && counter3 > 0 && counter4 > 0) {
                     click();
                     win();
+                    nextButton.setVisibility(View.VISIBLE);
                     next();
                 }
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
+
+                next();
             }
         });
 

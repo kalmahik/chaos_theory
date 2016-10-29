@@ -1,8 +1,10 @@
 package com.kalmahik.chaos_theory;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ public class Level2Activity extends AppCompatActivity {
     private Button button;
     private int counter = 0;
     private RelativeLayout mainActivity;
+    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,34 +28,59 @@ public class Level2Activity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.button);
 
+        nextButton = (Button) findViewById(R.id.button_next);
+
+        nextButton.setVisibility(View.GONE);
+
+
         mainActivity = (RelativeLayout) findViewById(R.id.activity_main);
+
         mainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //error_click();
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
             }
         });
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 counter++;
+                button.setBackgroundColor(0xffff0000);
+
+
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
+
                 if (counter > 1) {
-                    win();
-                    next();
                     click();
+                    win();
+                    nextButton.setVisibility(View.VISIBLE);
+
                 }
             }
         });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
+
+                next();
+            }
+        });
+
     }
 
     public void click() {
-        //Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.RED));
     }
 
-    public void error_click() {
-        //Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
+    public void errorClick() {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
 
     }
@@ -62,6 +90,7 @@ public class Level2Activity extends AppCompatActivity {
     }
 
     public void next() {
+
         Intent intent = new Intent(Level2Activity.this, Level3Activity.class);
         startActivity(intent);
     }
