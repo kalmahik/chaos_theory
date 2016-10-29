@@ -31,9 +31,10 @@ public class Level5Activity extends AppCompatActivity{
             public void onClick(View v) {
                 counter1++;
                 click();
-                if(counter2 > 1)
+                if(counter2 > 0)
                 {
                     win();
+                    next();
                 }
                 /*if (counter > 19) {
                     win();
@@ -49,9 +50,10 @@ public class Level5Activity extends AppCompatActivity{
             public void onClick(View v) {
                 counter2++;
                 click();
-                if(counter1 > 1)
+                if(counter1 > 0)
                 {
                     win();
+                    next();
                 }
                 /*if (counter > 19) {
                     win();
