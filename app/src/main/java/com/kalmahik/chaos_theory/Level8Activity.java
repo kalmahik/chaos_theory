@@ -1,9 +1,5 @@
 package com.kalmahik.chaos_theory;
 
-/**
- * Created by днс on 29.10.2016.
- */
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -64,9 +60,7 @@ public class Level8Activity extends AppCompatActivity {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
                 counter2++;
-                if (counter1 ==1){
-
-                }
+                button2.setVisibility(View.GONE);
 
             }
         });
@@ -84,9 +78,9 @@ public class Level8Activity extends AppCompatActivity {
                 counter3++;
 
 
-                if (counter1==1){
+                if (counter3==1){
                     if (counter2==1){
-                        if(counter3==1){
+                        if(counter1==1){
                             win();
                             buttonNext.setVisibility(View.VISIBLE);
                             next();
