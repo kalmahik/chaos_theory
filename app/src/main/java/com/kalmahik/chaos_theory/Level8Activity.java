@@ -52,10 +52,8 @@ public class Level8Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
-                if (counter1 == 1) {
-                    counter1 = 0;
-                }
-                counter1 = 1;
+                counter1++;
+
             }
         });
 
@@ -65,12 +63,9 @@ public class Level8Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
-                if (counter2 == 1) {
-                    counter2 = 0;
-                    counter1 = 0;
-                }
-                if (counter1 == 1) {
-                    counter2 = 1;
+                counter2++;
+                if (counter1 ==1){
+
                 }
 
             }
@@ -86,18 +81,22 @@ public class Level8Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
-                if (counter3 == 1 && (counter2 != 0 || counter1 != 0)) {
-                    counter3 = 0;
-                    counter2 = 0;
-                    counter1 = 0;
-                } else if ((counter3 == 1 && counter1 == 1 && counter2 == 0) || (counter3 == 1 && counter1 == 0 && counter2 == 1)) {
-                    counter3 = 2;
-                } else if (counter3 == 2 && counter2 == 1 && counter1 == 1) {
-                    win();
-                    buttonNext.setVisibility(View.VISIBLE);
-                    next();
+                counter3++;
 
+
+                if (counter1==1){
+                    if (counter2==1){
+                        if(counter3==1){
+                            win();
+                            buttonNext.setVisibility(View.VISIBLE);
+                            next();
+
+                        }
+                    }
                 }
+                counter2=0;
+                counter1=0;
+                counter3=0;
 
             }
 
