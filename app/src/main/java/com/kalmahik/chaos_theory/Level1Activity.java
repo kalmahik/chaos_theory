@@ -18,6 +18,7 @@ public class Level1Activity extends AppCompatActivity {
     private int counter = 0;
     private RelativeLayout mainActivity;
     private Button nextButton;
+    private ActionBar bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class Level1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_level_1);
 
         getSupportActionBar().setTitle("Level 1");
+
 
         button = (Button) findViewById(R.id.button);
 
