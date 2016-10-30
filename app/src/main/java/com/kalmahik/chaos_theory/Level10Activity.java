@@ -172,8 +172,8 @@ public class Level10Activity extends AppCompatActivity implements
     }
 
     public void next() {
-        //Intent intent = new Intent(Level10Activity.this, Level10Activity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(Level10Activity.this, Level11Activity.class);
+        startActivity(intent);
     }
 
     private Camera camera;
@@ -196,7 +196,7 @@ public class Level10Activity extends AppCompatActivity implements
         super.onResume();
         camera = Camera.open(1);
     }
-//
+
     @Override
     protected void onPause()
     {
