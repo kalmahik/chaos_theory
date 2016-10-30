@@ -68,10 +68,6 @@ public class Level11Activity extends Activity implements SensorEventListener{
         title.setSpan(customTypefaceSpan, 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
         title.setSpan(new RelativeSizeSpan(2f), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
-//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-//        getSupportActionBar().setTitle(title);
-
-        //create instance of sensor manager and get system service to interact with Sensor
         sensorManager= (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         Sensor proximitySensor= sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         if (proximitySensor == null){
@@ -134,7 +130,7 @@ public class Level11Activity extends Activity implements SensorEventListener{
 
     public void next() {
 
-        Intent intent = new Intent(Level11Activity.this, Level1Activity.class);
+        Intent intent = new Intent(Level11Activity.this, Level13Activity.class);
         startActivity(intent);
     }
 }

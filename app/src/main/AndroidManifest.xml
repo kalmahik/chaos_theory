@@ -27,25 +27,13 @@
         <activity android:name=".Level4Activity"></activity>
         <activity android:name=".Level5Activity"></activity>
         <activity android:name=".Level6Activity"></activity>
-        <activity android:name=".Level7Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Level8Activity">
-
-        </activity>
+        <activity android:name=".Level7Activity"></activity>
+        <activity android:name=".Level8Activity"></activity>
         <activity android:name=".Level9Activity"></activity>
-        <activity android:name=".Level10Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Level10Activity"></activity>
         <activity android:name=".Level11Activity"></activity>
+        <activity android:name=".Level13Activity"></activity>
+
 
 
     </application>

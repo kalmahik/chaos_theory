@@ -21,11 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-/**
- * Created by PolyProgrammist on 30.10.2016.
- */
 
-public class Level13Activity extends AppCompatActivity{
+public class Level13Activity extends AppCompatActivity {
     Button button;
     MediaPlayer mp;
     private Button nextButton;
@@ -37,14 +34,13 @@ public class Level13Activity extends AppCompatActivity{
         setContentView(R.layout.activity_level_13);
         button = (Button) findViewById(R.id.button13);
 
-
         SpannableString title = SpannableString.valueOf("Level 13");
         title.setSpan(new ForegroundColorSpan(0xffFF6F00), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
         CustomTypefaceSpan customTypefaceSpan = new CustomTypefaceSpan("halloween",
                 Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf"));
         title.setSpan(customTypefaceSpan, 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        //title.setSpan(new LinearSizeSpan(2f), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        title.setSpan(new RelativeSizeSpan(2f), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
         getSupportActionBar().setTitle(title);
@@ -100,6 +96,7 @@ public class Level13Activity extends AppCompatActivity{
             }
         });
     }
+
     public void win() {
         nextButton.setVisibility(View.VISIBLE);
         nextButton.setClickable(true);
