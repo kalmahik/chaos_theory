@@ -21,6 +21,7 @@ import android.widget.Toast;
 public class Level4Activity extends AppCompatActivity {
     private Button button;
     private int counter = 0;
+    private int counter2 = 0;
     private RelativeLayout mainActivity;
     private Button nextButton;
 
@@ -58,6 +59,36 @@ public class Level4Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
+                counter2++;
+
+                if (counter2 > 4){
+                    try {
+                        Thread.sleep(500);
+                        vibrator.vibrate(100);
+                        Thread.sleep(100);
+                        vibrator.vibrate(100);
+                        Thread.sleep(100);
+                        vibrator.vibrate(100);//
+                        Thread.sleep(500);
+                        vibrator.vibrate(100);
+                        Thread.sleep(500);
+                        vibrator.vibrate(100);
+                        Thread.sleep(500);
+                        vibrator.vibrate(100);//
+                        Thread.sleep(500);
+                        vibrator.vibrate(100);
+                        Thread.sleep(100);
+                        vibrator.vibrate(100);
+                        Thread.sleep(100);
+                        vibrator.vibrate(100);
+                        Thread.sleep(100);
+                        counter2=0;
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
             }
         });
 

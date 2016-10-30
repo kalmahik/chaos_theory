@@ -3,9 +3,11 @@ package com.kalmahik.chaos_theory;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Camera;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,18 +24,24 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import junit.framework.Test;
+
+import java.security.Policy;
+
 public class Level1Activity extends AppCompatActivity {
     private Button button;
     private int counter = 0;
     private RelativeLayout mainActivity;
     private Button nextButton;
     private ActionBar bar;
+    private MediaPlayer mp;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_1);
+
 
         SpannableString title = SpannableString.valueOf("Level 1");
         title.setSpan(new ForegroundColorSpan(0xffFF6F00), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
@@ -46,6 +54,14 @@ public class Level1Activity extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
         getSupportActionBar().setTitle(title);
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                mp = MediaPlayer.create(Level1Activity.this, R.raw.mysound);
+                mp.start();
+            }
+        }).start();
 
         button = (Button) findViewById(R.id.button);
 
@@ -64,6 +80,7 @@ public class Level1Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
+
             }
         });
 
