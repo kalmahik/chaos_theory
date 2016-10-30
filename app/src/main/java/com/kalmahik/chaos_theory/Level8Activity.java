@@ -1,8 +1,13 @@
 package com.kalmahik.chaos_theory;
 
+/**
+ * Created by днс on 29.10.2016.
+ */
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,11 +21,10 @@ public class Level8Activity extends AppCompatActivity {
     private Button button1;
     private Button button2;
     private Button button3;
-    private Button nextButton;
-    private RelativeLayout mainActivity;
     private int counter1 = 0;
     private int counter2 = 0;
     private int counter3 = 0;
+    private Button buttonNext;
 
 
     @Override
@@ -28,16 +32,26 @@ public class Level8Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_8);
 
+        RelativeLayout mainActivity = (RelativeLayout) findViewById(R.id.activity_main);
+
+        mainActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
+            }
+        });
+
+
         button1 = (Button) findViewById(R.id.button1);
-
-        getSupportActionBar().setTitle("Level 8");
-
-
-        button1 = (Button) findViewById(R.id.button1);
+        buttonNext = (Button) findViewById(R.id.button_next);
+        buttonNext.setVisibility(View.GONE);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
                 if (counter1 == 1) {
                     counter1 = 0;
                 }
@@ -49,6 +63,8 @@ public class Level8Activity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
                 if (counter2 == 1) {
                     counter2 = 0;
                     counter1 = 0;
@@ -60,57 +76,32 @@ public class Level8Activity extends AppCompatActivity {
             }
         });
 
+        getSupportActionBar().setTitle("Level 8");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+
+
         button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(counter1 == 1 && counter2 == 1 && counter3 == 1)
-                {
-                    counter3 = 2;
-                }
-                if (counter3 == 1) {
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
+                if (counter3 == 1 && (counter2 != 0 || counter1 != 0)) {
                     counter3 = 0;
                     counter2 = 0;
                     counter1 = 0;
-                }
-
-
-                if (counter3 == 2) {
+                } else if ((counter3 == 1 && counter1 == 1 && counter2 == 0) || (counter3 == 1 && counter1 == 0 && counter2 == 1)) {
+                    counter3 = 2;
+                } else if (counter3 == 2 && counter2 == 1 && counter1 == 1) {
                     win();
-                    click();
-                    nextButton.setVisibility(View.VISIBLE);
+                    buttonNext.setVisibility(View.VISIBLE);
+                    next();
+
                 }
 
             }
 
 
-        });
-
-
-        nextButton = (Button) findViewById(R.id.button_next);
-
-        nextButton.setVisibility(View.GONE);
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(100);
-
-                next();
-            }
-        });
-
-
-        mainActivity = (RelativeLayout) findViewById(R.id.activity_main);
-
-        mainActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(100);
-            }
         });
 
     }

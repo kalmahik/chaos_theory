@@ -2,15 +2,23 @@ package com.kalmahik.chaos_theory;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Level1Activity extends AppCompatActivity {
@@ -26,6 +34,17 @@ public class Level1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_level_1);
 
         getSupportActionBar().setTitle("Level 1");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+
+
+
+//        SpannableString title = SpannableString.valueOf("Level 1");
+//        title.setSpan(new ForegroundColorSpan(0xffFF6F00), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+//        CustomTypefaceSpan customTypefaceSpan = new CustomTypefaceSpan("halloween",
+//                Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf"));
+//        title.setSpan(customTypefaceSpan, 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+//        getSupportActionBar().setTitle(title);
 
 
         button = (Button) findViewById(R.id.button);
@@ -50,7 +69,6 @@ public class Level1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter++;
-                button.setBackgroundColor(0xffff0000);
 
 
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -79,7 +97,7 @@ public class Level1Activity extends AppCompatActivity {
     }
 
     public void click() {
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.RED));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6F00));
     }
 
     public void errorClick() {
@@ -96,4 +114,6 @@ public class Level1Activity extends AppCompatActivity {
         Intent intent = new Intent(Level1Activity.this, Level2Activity.class);
         startActivity(intent);
     }
+
+
 }

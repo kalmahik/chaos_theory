@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/black"
         android:gravity="center|top"
-        android:text="INTER"
+        android:text="ENTER"
         android:layout_alignBottom="@id/layout_linear"
         android:textColor="@color/colorPrimaryLogo"
         android:textSize="70sp" />

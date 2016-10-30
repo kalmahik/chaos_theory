@@ -2,6 +2,8 @@ package com.kalmahik.chaos_theory;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -109,6 +111,8 @@ public class Level10Activity extends AppCompatActivity {
         });
 
         getSupportActionBar().setTitle("Level 10");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+
 
     }
 

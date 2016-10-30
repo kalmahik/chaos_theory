@@ -26,6 +26,8 @@ public class Level5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_level_5);
 
         getSupportActionBar().setTitle("Level 5");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+
 
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
@@ -50,7 +52,6 @@ public class Level5Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter1++;
-                button1.setBackgroundColor(0xffff0000);
 
 
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -64,7 +65,6 @@ public class Level5Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter2++;
-                button2.setBackgroundColor(0xffff0000);
 
 
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -94,7 +94,7 @@ public class Level5Activity extends AppCompatActivity {
     }
 
     public void click() {
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.RED));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6F00));
     }
 
     public void errorClick() {

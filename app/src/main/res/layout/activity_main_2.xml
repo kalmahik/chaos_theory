@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_linear">
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_2" />
+
+
+    <TextView
+        android:id="@+id/sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:text="Sure?"
+        android:layout_marginBottom="40dp"
+        android:textColor="@android:color/black"
+        android:textSize="120sp" />
+
+
+    <TextView
+        android:id="@+id/yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:text="YES"
+        android:layout_below="@+id/sure"
+        android:textColor="@android:color/black"
+        android:textSize="70dp" />
+
+    <TextView
+        android:id="@+id/yes_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:text="NO"
+        android:layout_alignRight="@+id/yes"
+        android:layout_below="@+id/yes"
+        android:layout_marginBottom="40dp"
+        android:textColor="@android:color/black"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/no_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:text="YES"
+        android:layout_alignLeft="@+id/no"
+        android:layout_below="@+id/yes"
+        android:textColor="@android:color/black"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:text="NO"
+android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:textColor="@android:color/black"
+        android:textSize="70dp"
+        android:layout_below="@+id/sure"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+  />
+</RelativeLayout>

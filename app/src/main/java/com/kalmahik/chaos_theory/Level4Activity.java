@@ -25,6 +25,8 @@ public class Level4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_level_1);
 
         getSupportActionBar().setTitle("Level 4");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+
 
         button = (Button) findViewById(R.id.button);
 
@@ -76,7 +78,7 @@ public class Level4Activity extends AppCompatActivity {
     }
 
     public void click() {
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.RED));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6F00));
     }
 
     public void errorClick() {

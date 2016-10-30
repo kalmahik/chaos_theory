@@ -11,18 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Level1Activity">
-
-        </activity>
-        <activity android:name=".Level2Activity" />
-        <activity android:name=".Level3Activity" />
-        <activity android:name=".Level4Activity"></activity>
-        <activity android:name=".Level5Activity"></activity>
-        <activity android:name=".Level6Activity" />
-        <activity android:name=".Level7Activity" />
-        <activity android:name=".Level8Activity"></activity>
-        <activity android:name=".Level9Activity"></activity>
-        <activity android:name=".Level10Activity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +18,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Main2Activity"></activity>
+
+
+
+        <activity android:name=".Level1Activity"></activity>
+        <activity android:name=".Level2Activity"></activity>
+        <activity android:name=".Level3Activity"></activity>
+        <activity android:name=".Level4Activity"></activity>
+        <activity android:name=".Level5Activity"></activity>
+        <activity android:name=".Level6Activity"></activity>
+        <activity android:name=".Level7Activity"></activity>
+        <activity android:name=".Level8Activity"></activity>
+        <activity android:name=".Level9Activity"></activity>
+        <activity android:name=".Level10Activity"></activity>
+
+
+
     </application>
 
 </manifest>

@@ -26,6 +26,8 @@ public class Level9Activity extends AppCompatActivity {
         setContentView(R.layout.activity_level_1);
 
         getSupportActionBar().setTitle("Level 999");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+
 
         button = (Button) findViewById(R.id.button);
 
