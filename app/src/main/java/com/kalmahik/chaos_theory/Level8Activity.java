@@ -3,10 +3,15 @@ package com.kalmahik.chaos_theory;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -20,7 +25,7 @@ public class Level8Activity extends AppCompatActivity {
     private int counter1 = 0;
     private int counter2 = 0;
     private int counter3 = 0;
-    private Button buttonNext;
+    private Button nextButton;
 
 
     @Override
@@ -40,8 +45,12 @@ public class Level8Activity extends AppCompatActivity {
 
 
         button1 = (Button) findViewById(R.id.button1);
-        buttonNext = (Button) findViewById(R.id.button_next);
-        buttonNext.setVisibility(View.GONE);
+        nextButton = (Button) findViewById(R.id.button_next);
+        nextButton.setVisibility(View.GONE);
+
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf");
+        nextButton.setTypeface(typeFace);
+
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +71,20 @@ public class Level8Activity extends AppCompatActivity {
                 counter2++;
                 button2.setVisibility(View.GONE);
 
+
             }
         });
 
-        getSupportActionBar().setTitle("Level 8");
+        SpannableString title = SpannableString.valueOf("Level 8");
+        title.setSpan(new ForegroundColorSpan(0xffFF6F00), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
+        CustomTypefaceSpan customTypefaceSpan = new CustomTypefaceSpan("halloween",
+                Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf"));
+        title.setSpan(customTypefaceSpan, 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        title.setSpan(new RelativeSizeSpan(2f), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+        getSupportActionBar().setTitle(title);
 
 
         button3 = (Button) findViewById(R.id.button3);
@@ -82,7 +100,7 @@ public class Level8Activity extends AppCompatActivity {
                     if (counter2==1){
                         if(counter1==1){
                             win();
-                            buttonNext.setVisibility(View.VISIBLE);
+                            nextButton.setVisibility(View.VISIBLE);
                             next();
 
                         }
@@ -105,7 +123,16 @@ public class Level8Activity extends AppCompatActivity {
     }
 
     public void click() {
-        Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
+        SpannableString title = SpannableString.valueOf("Level 8");
+        title.setSpan(new ForegroundColorSpan(0xff000000), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
+        CustomTypefaceSpan customTypefaceSpan = new CustomTypefaceSpan("halloween",
+                Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf"));
+        title.setSpan(customTypefaceSpan, 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        title.setSpan(new RelativeSizeSpan(2f), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6F00));
     }
 
     public void next() {

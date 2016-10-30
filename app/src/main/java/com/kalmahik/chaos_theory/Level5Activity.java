@@ -3,10 +3,15 @@ package com.kalmahik.chaos_theory;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -25,14 +30,26 @@ public class Level5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_5);
 
-        getSupportActionBar().setTitle("Level 5");
+        SpannableString title = SpannableString.valueOf("Level 5");
+        title.setSpan(new ForegroundColorSpan(0xffFF6F00), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
+        CustomTypefaceSpan customTypefaceSpan = new CustomTypefaceSpan("halloween",
+                Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf"));
+        title.setSpan(customTypefaceSpan, 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        title.setSpan(new RelativeSizeSpan(2f), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+        getSupportActionBar().setTitle(title);
+
 
 
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
 
         nextButton = (Button) findViewById(R.id.button_next);
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf");
+        nextButton.setTypeface(typeFace);
+
 
         nextButton.setVisibility(View.GONE);
 
@@ -94,6 +111,15 @@ public class Level5Activity extends AppCompatActivity {
     }
 
     public void click() {
+        SpannableString title = SpannableString.valueOf("Level 5");
+        title.setSpan(new ForegroundColorSpan(0xff000000), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
+        CustomTypefaceSpan customTypefaceSpan = new CustomTypefaceSpan("halloween",
+                Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf"));
+        title.setSpan(customTypefaceSpan, 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        title.setSpan(new RelativeSizeSpan(2f), 0, title.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
+        getSupportActionBar().setTitle(title);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6F00));
     }
 

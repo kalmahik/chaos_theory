@@ -53,6 +53,9 @@ public class Level1Activity extends AppCompatActivity {
 
         nextButton.setVisibility(View.GONE);
 
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/halloween.ttf");
+        nextButton.setTypeface(typeFace);
+
 
         mainActivity = (RelativeLayout) findViewById(R.id.activity_main);
 
