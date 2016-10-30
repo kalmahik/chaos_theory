@@ -69,7 +69,7 @@ public class Level8Activity extends AppCompatActivity {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
                 counter2++;
-                button2.setVisibility(View.GONE);
+                button2.setBackgroundColor(0xFF000000);
 
 
             }
@@ -96,19 +96,21 @@ public class Level8Activity extends AppCompatActivity {
                 counter3++;
 
 
-                if (counter3==1){
+                if (counter1==1){
                     if (counter2==1){
-                        if(counter1==1){
+                        if(counter3==1){
                             win();
                             nextButton.setVisibility(View.VISIBLE);
                             next();
 
                         }
+
                     }
                 }
                 counter2=0;
                 counter1=0;
                 counter3=0;
+
 
             }
 

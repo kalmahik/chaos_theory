@@ -42,7 +42,6 @@ public class Level6Activity extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
 
 
-
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
 
@@ -101,6 +100,8 @@ public class Level6Activity extends AppCompatActivity {
 
                 if (counter2 > 2 && counter1 > 2) {
                     win();
+                    counter2 = 0;
+                    counter1 = 0;
                     nextButton.setVisibility(View.VISIBLE);
 
                 }

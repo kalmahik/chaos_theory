@@ -110,9 +110,13 @@ public class Level10Activity extends AppCompatActivity implements
                 vibrator.vibrate(100);
                 if (counter1 > 0 && counter2 > 0 && counter3 > 0 && counter4 > 0) {
                     click();
+                    g();
                     win();
                     nextButton.setVisibility(View.VISIBLE);
-                    next();
+
+
+
+
                 }
             }
         });
@@ -125,6 +129,7 @@ public class Level10Activity extends AppCompatActivity implements
                 vibrator.vibrate(100);
 
                 next();
+
             }
         });
 
@@ -157,7 +162,6 @@ public class Level10Activity extends AppCompatActivity implements
 
     public void win() {
         Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
-        g();
     }
 
     void g(){
@@ -172,6 +176,7 @@ public class Level10Activity extends AppCompatActivity implements
     }
 
     public void next() {
+//
         Intent intent = new Intent(Level10Activity.this, Level11Activity.class);
         startActivity(intent);
     }
@@ -244,7 +249,7 @@ public class Level10Activity extends AppCompatActivity implements
                 Configuration.ORIENTATION_LANDSCAPE)
         {
             // портретный вид
-            camera.setDisplayOrientation(90);
+            camera.setDisplayOrientation(270);
             lp.height = previewSurfaceHeight;
             lp.width = (int) (previewSurfaceHeight / aspect);
             ;

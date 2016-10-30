@@ -92,6 +92,10 @@ public class Level5Activity extends AppCompatActivity {
                     win();
                     click();
                     nextButton.setVisibility(View.VISIBLE);
+                    counter2 = 0;
+                    counter1 = 0;
+
+
 
                 }
             }

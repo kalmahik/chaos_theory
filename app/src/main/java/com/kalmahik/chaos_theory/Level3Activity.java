@@ -75,6 +75,7 @@ public class Level3Activity extends AppCompatActivity {
                     click();
                     win();
                     nextButton.setVisibility(View.VISIBLE);
+                    counter = 0;
 
                 }
             }
