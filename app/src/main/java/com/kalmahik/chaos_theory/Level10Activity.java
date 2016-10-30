@@ -196,7 +196,7 @@ public class Level10Activity extends AppCompatActivity implements
         super.onResume();
         camera = Camera.open(1);
     }
-
+//
     @Override
     protected void onPause()
     {
