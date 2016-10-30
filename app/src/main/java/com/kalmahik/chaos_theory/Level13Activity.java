@@ -49,7 +49,8 @@ public class Level13Activity extends AppCompatActivity{
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
         getSupportActionBar().setTitle(title);
 
-        nextButton = (Button) findViewById(R.id.button_next13);
+        nextButton = (Button) findViewById(R.id.button_next14);
+
 
         nextButton.setVisibility(View.GONE);
 
@@ -100,6 +101,9 @@ public class Level13Activity extends AppCompatActivity{
         });
     }
     public void win() {
-        Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
+        nextButton.setVisibility(View.VISIBLE);
+        nextButton.setClickable(true);
+        //Toast.makeText(this, "Congratulations", Toast.LENGTH_SHORT).show();
+
     }
 }
